@@ -78,6 +78,8 @@ const Create = () => {
           }
         }
 
+        console.log(data);
+
         dispatch({ type: ActionTypes.START });
         dispatch({ type: ActionTypes.CREATE_APPOINTMENT, payload: data });
         dispatch({ type: ActionTypes.STOP });
@@ -96,7 +98,7 @@ const Create = () => {
     };
 
     const startTime = moment(x.openTime, "HH:mm");
-    const endTime = moment(x.closeTime, "HH:mm");
+    const endTime = moment(x.closeTime, "HH:mm").add(15, "minutes");
 
     const allTimes = [];
 
